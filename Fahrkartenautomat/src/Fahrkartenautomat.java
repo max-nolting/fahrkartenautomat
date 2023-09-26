@@ -4,6 +4,7 @@ class Fahrkartenautomat {
 	
 	/*
 	 * A3.1: Ausgabe des Automaten anpassen
+	 * A3.2: Anzahl der Tickets hinzufügen
 	 * */
 	public static void main(String[] args) {
 
@@ -14,12 +15,18 @@ class Fahrkartenautomat {
 		double eingeworfeneMuenze;
 		double rueckgabebetrag;
 		double nochZuZahlen;
+		int anzahlTickets;
 
 		// 1
 		System.out.print("Zu zahlender Betrag (Euro): ");
 		zuZahlenderBetrag = tastatur.nextDouble();
 
+		System.out.print("Anzahl Tickets: ");
+		anzahlTickets = tastatur.nextInt();
+		
 		// 2
+		zuZahlenderBetrag *= anzahlTickets;
+		
 		eingezahlterGesamtbetrag = 0.0;
 		nochZuZahlen = 0.0;
 		while (eingezahlterGesamtbetrag < zuZahlenderBetrag) {
