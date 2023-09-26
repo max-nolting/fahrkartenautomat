@@ -18,7 +18,7 @@ class Fahrkartenautomat {
 		int anzahlTickets;
 
 		// 1
-		System.out.print("Zu zahlender Betrag (Euro): ");
+		System.out.print("Ticketpreis (Euro): ");
 		zuZahlenderBetrag = tastatur.nextDouble();
 
 		System.out.print("Anzahl Tickets: ");
