@@ -6,6 +6,7 @@ class Fahrkartenautomat {
 	 * A3.1: Ausgabe des Automaten anpassen
 	 * A3.2: Anzahl der Tickets hinzufügen
 	 * A4.2: Ticketgrenzen im Fahrkartenautomat
+	 * A4.3: Geldeingabe überprüfen
 	 * */
 	public static void main(String[] args) {
 
@@ -42,8 +43,12 @@ class Fahrkartenautomat {
 		while (eingezahlterGesamtbetrag < zuZahlenderBetrag) {
 			nochZuZahlen = zuZahlenderBetrag - eingezahlterGesamtbetrag;
 			System.out.printf("Noch zu zahlen: %.2f€\n", nochZuZahlen);
-			System.out.print("Eingabe (mind. 5 Cent, höchstens 2 Euro): ");
+			System.out.print("Eingabe (mind. 5 Cent, höchstens 20 Euro): ");
 			eingeworfeneMuenze = tastatur.nextDouble();
+			if(!isValid(eingeworfeneMuenze)) {
+				System.out.println("kein gültiges Zahlungsmittel");
+				eingeworfeneMuenze = 0;
+			}
 			eingezahlterGesamtbetrag = eingezahlterGesamtbetrag + eingeworfeneMuenze;
 		}
 		
@@ -96,5 +101,9 @@ class Fahrkartenautomat {
 				+ "Wir wünschen Ihnen eine gute Fahrt.");
 
 		tastatur.close();
+	}
+	
+	public static boolean isValid(Double muenze) {
+		return muenze == 0.05 || muenze == 0.1 || muenze == 0.2 || muenze == 0.5 || muenze == 1 || muenze == 2 || muenze == 5 || muenze == 10 || muenze == 20;
 	}
 }
