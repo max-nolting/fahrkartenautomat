@@ -106,4 +106,5 @@ class Fahrkartenautomat {
 	public static boolean isValid(Double muenze) {
 		return muenze == 0.05 || muenze == 0.1 || muenze == 0.2 || muenze == 0.5 || muenze == 1 || muenze == 2 || muenze == 5 || muenze == 10 || muenze == 20;
 	}
+
 }
