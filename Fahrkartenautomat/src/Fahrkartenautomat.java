@@ -7,6 +7,7 @@ class Fahrkartenautomat {
 	 * A3.2: Anzahl der Tickets hinzufügen
 	 * A4.2: Ticketgrenzen im Fahrkartenautomat
 	 * A4.3: Geldeingabe überprüfen
+	 * A5.3: Wiederholung der Eingabe der Ticketzahl
 	 * */
 	public static void main(String[] args) {
 
@@ -23,16 +24,15 @@ class Fahrkartenautomat {
 		// 1
 		System.out.print("Ticketpreis (Euro): ");
 		preisTickets = tastatur.nextDouble();
-		if(preisTickets < 0) {
-			System.out.println("Fehlerhafte Eingabe - Ticketanzahl wird uaf 1 gesetzt");
-			preisTickets = 1;
+		while(preisTickets <= 0) {
+			System.out.println("Fehlerhafte Eingabe - bitte Preis >0 eingeben");
+			preisTickets = tastatur.nextDouble();
 		}
-
 		System.out.print("Anzahl Tickets (bitte ganze Zahl zwischen 1 und 10): ");
 		anzahlTickets = tastatur.nextInt();
-		if(anzahlTickets < 1 || anzahlTickets > 10) {
-			System.out.println("Fehlerhafte Eingabe - Ticketanzahl wird uaf 1 gesetzt");
-			anzahlTickets = 1;
+		while(anzahlTickets < 1 || anzahlTickets > 10) {
+			System.out.println("Fehlerhafte Eingabe - bitte Anzahl zwischen 1 und 10 eingeben");
+			anzahlTickets = tastatur.nextInt();
 		}
 		
 		// 2
